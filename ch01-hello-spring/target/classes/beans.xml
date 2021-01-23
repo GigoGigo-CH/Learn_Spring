@@ -8,8 +8,9 @@
         声明bean，告诉spring要创建某个类的对象
         id：对象的自定义名称，唯一值。spring通过这个id找到对象
         class：类的全限定名称（不能是接口，因为spring是反射机制创建对象，必须使用类）
-        如下语句，spring就完成了 SomeServiceImpl someService = new SomeServiceImpl（）；
-        spring把创建好的对象放入map中，spring框架有一个map存放对象
+        实际上，在加载该配置文件时，该文件下所有的bean对象都会被创建，并且将对应键值对放入map中
+        如下语句，在加载该配置文件时，spring就完成了new SomeServiceImpl（）的对象创建，
+        spring把创建好的对象放入map中，可通过id获取这个对象
             springMap.put（id的值，对象）；
             例如 springMap.put("someService" , new SomeServiceImpl（）);
 
