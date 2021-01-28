@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--声明student对象
+        注入就是赋值的意思
+        di：给属性赋值
+        1.set注入（设值注入）：spring调用类的set方法，可以在set方法中完成属性赋值
+            1）简单类型的set注入    (简单类型：spring中规定java的基本数据类型和String都是简单类型)
+                <bean id="xx" class="yyy">
+                    <property name="属性名字" value="此属性的值">
+                    一个property只能给一个属性赋值
+                </bean>
+
+            2)引用类型的set注入：依然是调用set方法
+                <bean id="xx" class="yyy">
+                    <property name="属性名称" ref="bean的id(对象的key值)" />
+                </bean>
+         2.构造注入：spring调用类的有参构造方法，在创建对象的同时，在构造方法中给属性赋值
+         构造注入使用<constructor-arg> 标签
+         <constructor-arg> 标签:一个<constructor-arg>标签表示对应bean.class的有参构造的一个参数
+         <constructor-arg> 标签属性：
+            name：构造方法的形参名
+            index：构造方法的参数位置，参数从左到右0，1，2...
+            value：构造方法的形参类型是 简单类型 的，使用value
+            ref：构造方法的形参类型是 引用类型 ，使用ref
+
+    -->
+    <!--使用name属性实现构造注入-->
+    <bean id="mystudent" class="com.andy.ba03.Student">
+        <constructor-arg name="myname" value="andy"/>
+        <constructor-arg name="myage" value="20"/>
+        <constructor-arg name="mySchool" ref="myshool"/>
+    </bean>
+
+    <!--使用index属性-->
+    <bean id="mystudent2" class="com.andy.ba03.Student">
+        <constructor-arg index="0" value="andy"/>
+        <constructor-arg index="1" value="20"/>
+        <constructor-arg index="2" ref="myshool"/>
+
+    </bean>
+
+    <!--声明School对象的bean标签-->
+    <bean id="myshool" class="com.andy.ba03.School">
+        <property name="name" value="FUDAN"/>
+        <property name="address" value="上海市"/>
+    </bean>
+
+    <bean id="myFile" class="java.io.File">
+        <constructor-arg name="parent" value="D:\TEST"/>
+        <constructor-arg name="child" value="test.txt"/>
+
+    </bean>
+
+</beans>
