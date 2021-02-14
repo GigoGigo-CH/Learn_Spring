@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        Student模块所有<bean>的声明
+
+    -->
+
+    <!--byType-->
+    <bean id="myStudent" class="com.andy.ba06.Student" autowire="byType">
+        <property name="name" value="andy" />   <!--调用setName（“andy”）-->
+        <property name="age" value="20" />   <!--调用setAge（20）-->
+        <!--引用类型的赋值-->
+        <!--<property name="school" ref="myShool"/>-->
+
+    </bean>
+
+
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        Student模块所有<bean>的声明
+        School模块的配置文件
+
+    -->
+
+    <!--声明School的子类PrimarySchool-->
+    <bean id="primarySchool" class="com.andy.ba06.School">     <!--id名与类型均相同-->
+        <property name="name" value="复旦大学"/>
+        <property name="address" value="上海市杨浦区邯郸路"/>
+    </bean>
+
+</beans>
