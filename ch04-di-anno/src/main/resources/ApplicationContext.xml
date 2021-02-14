@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--声明组件扫描器component-scan,组件就是Java对象
+        base-package：指定注解在项目中的包名
+        component-scan工作方式：spring会扫描遍历base-package指定的包，对包中和子包中所有的类，找到类中的注解，
+        按照注解的功能创建对象或给属性赋值
+
+    -->
+    <context:component-scan base-package="com.andy.ba07" />
+
+    <!--指定多个包的三种方式-->
+    <!-- method_1: 使用多次component-scan，指定不同的包 -->
+        <!--<context:component-scan base-package="com.andy.ba02" />-->
+    <!-- method_2: 使用分隔符 ( ;或 ,) 分隔多个包名 -->
+        <!--<context:component-scan base-package="com.andy.ba01; com.andy.ba02" />-->
+    <!-- method_1: 指定父包，其所有子包也会被扫描 -->
+        <!--<context:component-scan base-package="com.andy" />-->
+
+
+    <!-- 使用注解效果等同于创建一个bean标签
+    <bean id="myXueXiao" class="com.andy.ba03.School">
+        <property name="name" value="NCEPU" />
+        <property name="address" value="北京市昌平区" />
+    </bean>-->
+
+    <!--可用于加载属性配置文件-->
+    <context:property-placeholder location="classpath:test.properties" />
+
+</beans>
