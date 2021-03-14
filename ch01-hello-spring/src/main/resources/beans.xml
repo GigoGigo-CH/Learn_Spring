@@ -16,7 +16,15 @@
 
             一个bean标签声明一个对象
     -->
-    <bean id="someService" class="com.andy.service.impl.SomeServiceImpl" />
+    <bean id="someService" class="com.andy.ba01.impl.SomeServiceImpl" />
+
+    <bean id="someService1" class="com.andy.ba01.impl.SomeServiceImpl" scope="prototype"/>
+
+    <!--
+        spring能创建一个非自定义类的对象吗
+    -->
+    <bean id="mydate" class="java.util.Date"></bean>
+
 
 </beans>
 

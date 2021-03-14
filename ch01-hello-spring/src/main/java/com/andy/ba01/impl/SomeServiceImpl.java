@@ -1,6 +1,6 @@
-package com.andy.service.impl;
+package com.andy.ba01.impl;
 
-import com.andy.service.SomeService;
+import com.andy.ba01.SomeService;
 
 /**
  * @Author: Andy

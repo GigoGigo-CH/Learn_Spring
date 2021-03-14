@@ -18,10 +18,18 @@
     -->
     <bean id="someService" class="com.andy.service.impl.SomeServiceImpl" />
 
+    <bean id="someService1" class="com.andy.service.impl.SomeServiceImpl" scope="prototype"/>
+
+    <!--
+        spring能创建一个非自定义类的对象吗
+    -->
+    <bean id="mydate" class="java.util.Date"></bean>
+
+
 </beans>
 
-<!--
-    spring的配置文件
-    1.beans ：是根标签，在spring中把java对象称为bean
-    2.spring-beans.xsd 是约束文件，和mybatis指定的dtd是一样的
--->
+        <!--
+            spring的配置文件
+            1.beans ：是根标签，在spring中把java对象称为bean
+            2.spring-beans.xsd 是约束文件，和mybatis指定的dtd是一样的
+        -->
